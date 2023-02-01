@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Light-grayish-cyan);
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.main h1 {
+  color: var(--Very-dark-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  background-color: var(--White);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  row-gap: 2rem;
+}
+
+.container > .col {
+  flex-basis: 100%;
+}
+
+.form .form-control label,
+.form fieldset legend {
+  font-size: 0.813rem;
+  color: var(--Dark-grayish-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.helper-text {
+  color: red;
+  float: right;
+}
+
+.form input[type="text"] {
+  width: 100%;
+  display: block;
+  border: 0;
+  text-align: right;
+  font-size: 24px;
+  background: var(--Very-light-grayish-cyan);
+  padding-right: 1rem;
+  color: var(--Very-dark-cyan);
+  border-radius: 0.5rem;
+  border: 2px solid var(--Very-light-grayish-cyan);
+  margin-top: 0.5rem;
+}
+
+.form input[type="text"].error {
+  border-color: red;
+}
+
+.form input[type="text"]:focus {
+  border: 2px solid var(--Strong-cyan);
+}
+
+.form input#bill {
+  background-image: url("../images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+}
+
+.form fieldset {
+  border: 0;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.form fieldset .col {
+  --cols: 2;
+  --gap: 0.5rem;
+  flex-basis: calc(100% / var(--cols) - var(--gap));
+}
+
+.form fieldset legend {
+  flex-basis: 100%;
+}
+
+.form fieldset label {
+  cursor: pointer;
+}
+
+.form fieldset input {
+  display: none;
+}
+
+.form fieldset label span {
+  background-color: var(--Very-dark-cyan);
+  display: block;
+  font-size: 24px;
+  color: var(--White);
+  text-align: center;
+  border-radius: 0.3rem;
+  padding: 2px 0;
+}
+
+.form fieldset label input[type="radio"]:checked + span {
+  background-color: var(--Strong-cyan);
+}
+
+.form fieldset label#custom button {
+  background-color: var(--Very-light-grayish-cyan);
+  color: var(--Dark-grayish-cyan);
+  height: 100%;
+  width: 100%;
+  border: 0;
+  font-size: 24px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.form fieldset label#custom input {
+  display: none;
+}
+
+.form input#people {
+  background-image: url("../images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+}
+
+.result {
+  --cols: 1;
+  background-color: var(--Very-dark-cyan);
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  color: var(--Very-light-grayish-cyan);
+  gap: 2rem;
+}
+
+.result > .col {
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result div span {
+  font-size: 0.813rem;
+  color: var(--Dark-grayish-cyan);
+}
+
+.result .col output {
+  font-size: 27px;
+  color: var(--Strong-cyan);
+  text-transform: uppercase;
+}
+
+.result button {
+  width: 100%;
+  font-size: 20px;
+  color: var(--Very-dark-cyan);
+  background-color: var(--Strong-cyan);
+  border: 0;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .main {
+    margin-top: 0;
+  }
+
+  .container {
+    gap: 2rem;
+    max-width: 780px;
+  }
+
+  .container > .col {
+    flex-basis: calc(100% / 2 - 1rem);
+  }
+
+  .form fieldset .col {
+    --cols: 3;
+    --gap: 0.67rem;
+  }
+
+  .result button {
+    margin-top: 5rem;
+    display: block;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}

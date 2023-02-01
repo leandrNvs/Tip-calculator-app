@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1><img src="Assets/images/logo.svg" alt="Splitter" /></h1>
+      <div class="row container">
+        <div class="col">
+          <form class="form" id="form">
+            <div class="form-control">
+              <label for="bill">Bill</label>
+              <span class="helper-text input-bill"></span>
+              <input type="text" name="bill" id="bill" placeholder="0" />
+            </div>
+            <fieldset class="row">
+              <div style="flex-basis: 100%">
+                <legend style="float: left">Select Tip %</legend>
+                <span class="helper-text input-tip"></span>
+              </div>
+              <label class="col">
+                <input type="radio" name="tip" value="5" checked />
+                <span>5%</span>
+              </label>
+              <label class="col">
+                <input type="radio" name="tip" value="10" />
+                <span>10%</span>
+              </label>
+              <label class="col">
+                <input type="radio" name="tip" value="15" />
+                <span>15%</span>
+              </label>
+              <label class="col">
+                <input type="radio" name="tip" value="25" />
+                <span>25%</span>
+              </label>
+              <label class="col">
+                <input type="radio" name="tip" value="50" />
+                <span>50%</span>
+              </label>
+              <label class="col" id="custom">
+                <button type="button" class="open-custom">custom</button>
+                <input type="text" name="custom" style="margin: 0" />
+              </label>
+            </fieldset>
+            <div class="form-control">
+              <label for="people">number of People</label>
+              <span class="helper-text input-people"></span>
+              <input type="text" name="people" id="people" placeholder="0" />
+            </div>
+            <input type="submit" value="send" style="display: none" />
+          </form>
+        </div>
+        <div class="col row result">
+          <div class="col row">
+            <div>Tip Amount<br /><span>/ person</span></div>
+            <output name="tipByPerson" for="bill tip people" form="form">
+              $0.00
+            </output>
+          </div>
+          <div class="col row">
+            <div>Total<br /><span>/ person</span></div>
+            <output name="totalByPerson" for="bill tip people" form="form">
+              $0.00
+            </output>
+          </div>
+          <div class="col row">
+            <button type="reset" form="form">Reset</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="Assets/js/main.js"></script>
+  </body>
+</html>
